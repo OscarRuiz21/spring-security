@@ -1,0 +1,11 @@
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/security/SecurityConfig.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/AppSecurityApplication.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/CardsController.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/WelcomeController.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/security/CustomerUserDetails.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/repositories/CustomerRepository.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/AccountsController.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/BalanceController.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/LoansController.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/entities/CustomerEntity.java
+/Users/oscarruiz/Documents/Repos/ru-learning/spring-security/src/main/java/com/ru_learning/app_security/controllers/AboutUsController.java
