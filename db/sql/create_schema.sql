@@ -1,3 +1,7 @@
+/*
+SCHEMA FROM SPRING SECURITY:
+https://github.com/spring-projects/spring-security/blob/main/core/src/main/resources/org/springframework/security/core/userdetails/jdbc/users.ddl
+
 create table users(
                       username varchar(50) not null primary key,
                       password varchar(500) not null,
@@ -13,3 +17,11 @@ create table authorities (
 create unique index ix_auth_username on authorities (
                                                      username,
                                                      authority);
+*/
+
+
+create table customers(
+                          id bigserial primary key,
+                          email varchar(50) not null,
+                          pwd varchar(500) not null,
+                          rol varchar(20) not null);

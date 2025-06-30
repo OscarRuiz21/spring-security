@@ -31,6 +31,7 @@ public class SecurityConfig {
     }
 
     /*
+    // IN MEMORY USERS
     @Bean
     InMemoryUserDetailsManager inMemoryUserDetailsManager() {
         var admin = User.withUsername("admin")
@@ -44,10 +45,15 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(admin, user);
     }*/
 
+    /*
+    // For JDBC userDetailsService default
     @Bean
     UserDetailsService userDetailsService(DataSource dataSource) {
         return new JdbcUserDetailsManager(dataSource);
     }
+     */
+
+
 
     @Bean
     PasswordEncoder passwordEncoder() {
