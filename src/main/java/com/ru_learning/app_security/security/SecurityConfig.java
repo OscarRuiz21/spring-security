@@ -54,17 +54,17 @@ public class SecurityConfig {
     }
      */
 
-    /*
     //Method to do not have to encode passwords in development
     @Bean
     PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
 
-     */
 
+    /*
     @Bean
     PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); to_be_encoded
     }
+    */
 }
