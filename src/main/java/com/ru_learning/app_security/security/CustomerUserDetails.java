@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+/*
 
 @Service
 @Transactional
@@ -32,3 +32,6 @@ public class CustomerUserDetails implements UserDetailsService {
                 }).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 }
+*/
+
+public class CustomerUserDetails{}

@@ -3,6 +3,7 @@ package com.ru_learning.app_security.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +25,10 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import javax.sql.DataSource;
 import java.util.List;
 
+// note: When we use Role, it is necessary to have ROLE_ prefix in database
+
 @Configuration
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -34,12 +38,22 @@ public class SecurityConfig {
         requestHandler.setCsrfRequestAttributeName("_csrf");
 
         http.authorizeHttpRequests(auth ->
-                auth.requestMatchers("/loans", "/balance", "/accounts", "/cards")
-                        .authenticated()
+                //auth.requestMatchers("/loans", "/balance", "/accounts", "/cards")
+                        auth
+                            .requestMatchers("/loans", "/balance").hasRole("USER")
+                            //.requestMatchers("/accounts", "/cards").hasRole("ADMIN")
+                            /*
+                            .requestMatchers("/loans").hasAuthority("VIEW_LOANS")
+                            .requestMatchers("/balance").hasAuthority("VIEW_BALANCE")
+                            .requestMatchers("/cards").hasAuthority("VIEW_CARDS")
+                            .requestMatchers("/accounts").hasAnyAuthority("VIEW_ACCOUNT", "VIEW_CARDS")
+                            */
                         .anyRequest().permitAll())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
-        http.csrf(csrf -> csrf.csrfTokenRequestHandler(requestHandler)
+        http.cors(cors -> corsConfigurationSources());
+        http.csrf(csrf -> csrf
+                .csrfTokenRequestHandler(requestHandler)
                 .ignoringRequestMatchers("/welcome", "/about_us")
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class);
